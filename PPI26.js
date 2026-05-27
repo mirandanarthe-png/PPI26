@@ -217,47 +217,49 @@ const{nome, idade} = pessoa2;
 console.log(nome,idade);
 
 function product(nome, sto, ram, price, qty, category){
-    this.name=nome;
-    this.sto=sto;
-    this.ram=ram;
-    this.price=price;
-    this.qty=qty;
-    this.category =category;
+        this.name=nome;
+            this.sto=sto;
+                this.ram=ram;
+                    this.price=price;
+                        this.qty=qty;
+                            this.category =category;
+                            }
+
+                            const p1 = new product('Iphone',256,16,5000,10,'Celular');
+                            const p2 = new product('iPad', 512, 16, 8000, 20, 'Tablet');
+                            const p3 = new product('Macbook', 1024, 24, 15000, 30, 'Notebook');
+                            const p4 = new product('iPhone Pro Max', 256, 16, 7000, 15, 'Celular');
+                            const p5 = new product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
+                            const p6 = new product('Macbook Pro', 1024, 24, 25000, 35, 'Notebook');
+
+                            const estoque = [
+                              { ...p1 },
+                                { ...p2 },
+                                  { ...p3 },
+                                    { ...p4 },
+                                      { ...p5 },
+                                        { ...p6 },
+                                        ];
+                                        console.log(estoque);
+
+                                        /* DESAFIO 1
+
+                                        /* DESAFIO 1
+
+                                        a) Valor total de todos os produtos em estoque
+                                        b) Ordene os produtos por nome (crescente/decrescente)
+                                        c) Ordene os produtos por preço (crescente/decrescente)
+                                        d) Filtre produtos de acordo uma categoria
+
+                                        */
+
+                                        // a) Valor total de todos os produtos em estoque
+                                        const valorTotal = estoque
+                                          .reduce((valor, p) => valor + p.price * p.qty, 0)
+                                            .toFixed(2);
+                                            console.log(`Valor total: R$ ${valorTotal}`);
+
+
+                                        
+
 }
-
-const p1 = new product('Iphone',256,16,5000,10,'Celular');
-const p2 = new product('iPad', 512, 16, 8000, 20, 'Tablet');
-const p3 = new product('Macbook', 1024, 24, 15000, 30, 'Notebook');
-const p4 = new product('iPhone Pro Max', 256, 16, 7000, 15, 'Celular');
-const p5 = new product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
-const p6 = new product('Macbook Pro', 1024, 24, 25000, 35, 'Notebook');
-
-const estoque = [
-  { ...p1 },
-  { ...p2 },
-  { ...p3 },
-  { ...p4 },
-  { ...p5 },
-  { ...p6 },
-];
-console.log(estoque);
-
-/* DESAFIO 1
-
-/* DESAFIO 1
-
-a) Valor total de todos os produtos em estoque
-b) Ordene os produtos por nome (crescente/decrescente)
-c) Ordene os produtos por preço (crescente/decrescente)
-d) Filtre produtos de acordo uma categoria
-
-*/
-
-// a) Valor total de todos os produtos em estoque
-const valorTotal = estoque
-  .reduce((valor, p) => valor + p.price * p.qty, 0)
-  .toFixed(2);
-console.log(`Valor total: R$ ${valorTotal}`);
-
-
-
