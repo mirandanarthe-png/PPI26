@@ -13,7 +13,7 @@ const alunoNota = alunos.map((aluno) => ({
     0,
   ).toFixed(2),
 }))
-.filter(aluno => aluno.media <=7);
+.filter(aluno => aluno.media >=7);
 console.log(alunoNota);
 
 
