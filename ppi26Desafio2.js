@@ -29,3 +29,21 @@ const filmes = [
   { titulo: "Interestelar", ano: 2014, genero: "ficção" },
   { titulo: "Divertida Mente", ano: 2015, genero: "animação" },
 ];
+
+//correçao no laboratorio
+
+function buscarfilmes(genero,criterio){
+  const filtro = filmes.filter((filme) => filme.genero === genero);
+
+  if(criterio === 'titulo'){
+    filtro.sort((a,b) => a.titulo.localeCompare(b.titulo));
+  } else if (criterio === 'ano'){
+    filtro.sort((a,b) => b.ano - a.ano);
+  }else {
+    console.log ('criterio invalido!');
+    filtro.length = 0;
+  }
+ console.log(
+  filtro.map((filme) => )
+ )
+}
