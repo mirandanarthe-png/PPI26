@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 
 function App() {
-  const notices = [
+  const [notices, setNotice] = useState([
     {
       id: 1,
       title: "Secitex Macau 2026",
@@ -21,7 +22,14 @@ function App() {
       date: "01/07/2026",
       featured: false,
     },
-  ];
+  ]);
+
+  function handleTooggleFeatured(id){
+    setNotices((notices) =>
+    notices.map((notice) => notice.id === id ? {...notice, featured: !notice.featured} : notice,
+  ),
+);
+  }
 
   return (
     <>
@@ -29,6 +37,10 @@ function App() {
         title={"Programação para Internet"}
         subtitle={"Curso Técnico Integrado em Informática"}
       />
+      <NoticeList notice={notices} onTooggleFeatured={handleTooggleFeatured} />
+
+
+
       <main className="main">
         <h1>Mural Digital do IFRN - Campus Macau</h1>
 

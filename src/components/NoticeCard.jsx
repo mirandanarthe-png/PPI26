@@ -1,14 +1,20 @@
 import "./NoticeCard.css";
 
-function NoticeCard({ notice }) {
+function NoticeCard({ notice, onTooggleFeatured }) {
     return (
-        <article className="notice-card">
+        <article className={`notice-card ${notice.featured && "featured"}`}>
             <p>{notice.category}</p>
             <h3>{notice.title}</h3>
             <p>{notice.description}</p>
-            <div>
+            <div classeName="notice-meta">
                 <span>Por: {notice.author}</span>
                 <span>Data: {notice.date}</span>
+            </div>
+            <div classeName="notice-actions">
+                <button onClick={() =>onTooggleFeatured(notice.id)}>
+                    Destacar
+                </button>
+
             </div>
         </article>
     );

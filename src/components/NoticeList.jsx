@@ -1,13 +1,13 @@
 import NoticeCard from "./NoticeCard";
 import "./NoticeList.css";
 
-function NoticeList({ notices }) {
+function NoticeList({ notices, onTooggleFeatured }) {
     return (
         <main>
             <h2>Mural Digital do IFRN - Campus Macau</h2>
 
             {notices.map((notice) => (
-                <NoticeCard notice={notice} />
+                <NoticeCard key={notice.id}notice={notice} onTooggleFeatured={onTooggleFeatured} />
             ))}
         </main>
     );
