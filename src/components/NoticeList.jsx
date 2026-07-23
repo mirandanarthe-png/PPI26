@@ -1,19 +1,23 @@
 import NoticeCard from "./NoticeCard";
 import "./NoticeList.css";
 
-function NoticeList({ notices, onTooggleFeatured }) {
-    return (
-        <main>
-            <h2>Mural Digital do IFRN - Campus Macau</h2>
+function NoticeList({ notices, onToggleFeatured, onDeleteNotice }) {
+  return (
+    <main>
+      <h2>Mural Digital do IFRN - Campus Macau</h2>
 
-            {notices.map((notice) => (
-                <NoticeCard key={notice.id}notice={notice} onTooggleFeatured={onTooggleFeatured} />
-            ))}
-        </main>
-    );
+      {notices.map((notice) => (
+        <NoticeCard
+          key={notice.id}
+          notice={notice}
+          onToggleFeatured={onToggleFeatured}
+          onDelete={onDeleteNotice}
+        />
+      ))}
+    </main>
+  );
 }
 
 export default NoticeList;
-
 
 
